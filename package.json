@@ -1,0 +1,21 @@
+{
+  "name": "brrrgrrr",
+  "version": "1.0.0",
+  "description": "Full-Stack Burger Ordering Web App",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"npm run dev --prefix server\" \"npm run dev --prefix client\"",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "seed": "node server/src/seed.js"
+  },
+  "keywords": [
+    "burger",
+    "ordering",
+    "mern"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
