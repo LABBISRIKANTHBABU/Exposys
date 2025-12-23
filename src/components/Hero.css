@@ -1,0 +1,358 @@
+.hero-section {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 6rem;
+    padding-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        padding-top: 4rem;
+    }
+}
+
+/* Background Shapes */
+.hero-bg-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -10;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.hero-bg-blob-1 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 600px;
+    height: 600px;
+    background-color: var(--color-brand-50);
+    border-radius: 9999px;
+    filter: blur(64px);
+    opacity: 0.5;
+    transform: translate(33%, -25%);
+}
+
+.hero-bg-blob-2 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 400px;
+    height: 400px;
+    background-color: #ffedd5;
+    /* orange-100 */
+    border-radius: 9999px;
+    filter: blur(64px);
+    opacity: 0.4;
+    transform: translate(-50%, 25%);
+}
+
+.hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+@media (min-width: 1024px) {
+    .hero-container {
+        padding: 0 1.5rem;
+    }
+}
+
+.hero-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .hero-layout {
+        flex-direction: row;
+        gap: 5rem;
+    }
+}
+
+/* Text Content */
+.hero-content {
+    text-align: center;
+    animation: slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@media (min-width: 1024px) {
+    .hero-content {
+        width: 50%;
+        text-align: left;
+    }
+}
+
+.hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background-color: var(--color-brand-50);
+    border: 1px solid var(--color-brand-100);
+    color: var(--color-brand-700);
+    font-weight: 500;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.hero-title {
+    font-size: 3rem;
+    font-family: var(--font-heading);
+    font-weight: 800;
+    color: var(--color-neutral-900);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.025em;
+}
+
+@media (min-width: 1024px) {
+    .hero-title {
+        font-size: 4.5rem;
+        /* 7xl approx */
+    }
+}
+
+.hero-description {
+    font-size: 1.125rem;
+    color: var(--color-neutral-600);
+    margin-bottom: 2rem;
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.625;
+}
+
+@media (min-width: 1024px) {
+    .hero-description {
+        font-size: 1.25rem;
+        margin-left: 0;
+    }
+}
+
+.hero-actions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+@media (min-width: 640px) {
+    .hero-actions {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-actions {
+        justify-content: flex-start;
+    }
+}
+
+.hero-btn {
+    width: 100%;
+    height: 3.5rem;
+    padding: 0 2rem;
+    font-size: 1.125rem;
+}
+
+@media (min-width: 640px) {
+    .hero-btn {
+        width: auto;
+    }
+}
+
+/* Trust Signals */
+.hero-trust {
+    margin-top: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    border-top: 1px solid var(--color-neutral-200);
+    padding-top: 2rem;
+}
+
+@media (min-width: 1024px) {
+    .hero-trust {
+        justify-content: flex-start;
+    }
+}
+
+.trust-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 1024px) {
+    .trust-item {
+        align-items: flex-start;
+    }
+}
+
+.trust-stars {
+    display: flex;
+    color: #eab308;
+    /* yellow-500 */
+    margin-bottom: 0.25rem;
+}
+
+.trust-separator {
+    width: 1px;
+    height: 2.5rem;
+    background-color: var(--color-neutral-200);
+}
+
+.trust-label-lg {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-neutral-900);
+    font-family: var(--font-heading);
+}
+
+.trust-label-sm {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-neutral-600);
+}
+
+/* Visual Content */
+.hero-visual {
+    position: relative;
+    width: 100%;
+    animation: fadeIn 0.5s ease-out 0.1s backwards;
+}
+
+@media (min-width: 1024px) {
+    .hero-visual {
+        width: 50%;
+    }
+}
+
+.burger-showcase-container {
+    position: relative;
+    z-index: 10;
+    animation: float 6s ease-in-out infinite;
+}
+
+.burger-placeholder {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .burger-placeholder {
+        width: 480px;
+        height: 480px;
+    }
+}
+
+.burger-glow {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top right, var(--color-brand-500), #fb923c);
+    border-radius: 9999px;
+    opacity: 0.1;
+    filter: blur(24px);
+}
+
+.burger-circle {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    border-radius: 2.5rem;
+    box-shadow: 0 25px 50px -12px rgba(124, 45, 18, 0.1);
+    /* shadow-2xl shadow-brand-900/10 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 8px solid white;
+    position: relative;
+    overflow: hidden;
+}
+
+.burger-circle-bg {
+    position: absolute;
+    inset: 0;
+    background-color: var(--color-brand-50);
+    opacity: 0.5;
+}
+
+.burger-emoji {
+    font-size: 10rem;
+    line-height: 1;
+    user-select: none;
+    position: relative;
+    z-index: 10;
+    transition: transform 0.5s;
+    cursor: default;
+}
+
+@media (min-width: 768px) {
+    .burger-emoji {
+        font-size: 15rem;
+    }
+}
+
+.burger-emoji:hover {
+    transform: scale(1.1);
+}
+
+.fresh-badge {
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-layered);
+    border: 1px solid var(--color-neutral-100);
+    max-width: 160px;
+    z-index: 20;
+    /* Simulate animate-bounce a bit? */
+    animation: float 4s ease-in-out infinite reverse;
+}
+
+.fresh-content {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.fresh-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 9999px;
+    background-color: #dcfce7;
+    /* green-100 */
+    color: #16a34a;
+    /* green-600 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg-pattern {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 120%;
+    height: 120%;
+    z-index: -10;
+    opacity: 0.3;
+    color: var(--color-brand-200);
+    fill: currentColor;
+    animation: spin 3s linear infinite;
+}

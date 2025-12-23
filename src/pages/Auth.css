@@ -1,0 +1,199 @@
+/* Auth Page Styles */
+.auth-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-neutral-50);
+    padding: 1rem;
+}
+
+.auth-container {
+    width: 100%;
+    max-width: 28rem;
+    /* max-w-md */
+}
+
+.auth-card {
+    background-color: white;
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: var(--shadow-layered);
+    border: 1px solid var(--color-neutral-100);
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.auth-icon-wrapper {
+    width: 4rem;
+    height: 4rem;
+    background-color: var(--color-brand-100);
+    color: var(--color-brand-600);
+    border-radius: 9999px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.5rem;
+}
+
+.auth-title {
+    font-size: 1.875rem;
+    /* 3xl */
+    font-weight: 800;
+    color: var(--color-neutral-900);
+    margin-bottom: 0.5rem;
+    font-family: var(--font-heading);
+}
+
+.auth-subtitle {
+    color: var(--color-neutral-600);
+    font-size: 0.875rem;
+}
+
+.auth-toggle-btn {
+    color: var(--color-brand-600);
+    font-weight: 600;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 0.25rem;
+    font-family: inherit;
+}
+
+.auth-toggle-btn:hover {
+    text-decoration: underline;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    position: relative;
+}
+
+.auth-input-wrapper {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--color-neutral-400);
+    pointer-events: none;
+}
+
+.auth-input {
+    width: 100%;
+    padding: 0.875rem 1rem 0.875rem 2.75rem;
+    /* Left padding for icon */
+    border: 1px solid var(--color-neutral-300);
+    border-radius: 0.75rem;
+    font-size: 0.9375rem;
+    transition: all 0.2s;
+    background-color: white;
+}
+
+.auth-input:focus {
+    outline: none;
+    border-color: var(--color-brand-500);
+    box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.1);
+}
+
+/* Rounded grouping styles like typical login forms if desired, 
+   but individual spaced inputs look more modern. 
+   Keeping them spaced via gap in .auth-form
+*/
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 0.875rem;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+/* Error Message */
+.auth-error {
+    background-color: #fef2f2;
+    /* red-50 */
+    border: 1px solid #fee2e2;
+    /* red-200 */
+    color: #b91c1c;
+    /* red-700 */
+    padding: 1rem;
+    border-radius: 0.75rem;
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    font-size: 0.875rem;
+}
+
+.error-icon {
+    color: #ef4444;
+    /* red-500 */
+    flex-shrink: 0;
+}
+
+/* Divider */
+.auth-divider {
+    position: relative;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.divider-line {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-neutral-200);
+}
+
+.divider-text {
+    position: relative;
+    background-color: white;
+    padding: 0 0.75rem;
+    color: var(--color-neutral-500);
+    font-size: 0.875rem;
+}
+
+/* Test Credentials */
+.test-creds-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.test-cred-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    border: 1px solid var(--color-neutral-300);
+    border-radius: 0.75rem;
+    background-color: white;
+    color: var(--color-neutral-600);
+    font-size: 0.875rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.test-cred-btn:hover {
+    background-color: var(--color-neutral-50);
+    border-color: var(--color-neutral-400);
+    color: var(--color-neutral-900);
+}

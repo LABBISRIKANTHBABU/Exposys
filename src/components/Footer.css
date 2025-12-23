@@ -1,0 +1,127 @@
+.footer {
+    background: linear-gradient(to right, #1f2937, #111827);
+    /* gray-800 to gray-900 */
+    color: white;
+    padding: 3rem 0;
+}
+
+.footer-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+}
+
+@media (min-width: 768px) {
+    .footer-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.footer-col-main {
+    grid-column: span 1;
+}
+
+@media (min-width: 768px) {
+    .footer-col-main {
+        grid-column: span 2;
+    }
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.footer-logo-icon {
+    background-color: white;
+    color: #ea580c;
+    /* orange-600 */
+    border-radius: 9999px;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 0.75rem;
+    font-size: 1.25rem;
+}
+
+.footer-brand-name {
+    font-size: 1.5rem;
+    /* 2xl */
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+
+.footer-description {
+    color: #9ca3af;
+    /* gray-400 */
+    margin-bottom: 1.5rem;
+    max-width: 28rem;
+    line-height: 1.6;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-link {
+    color: #9ca3af;
+    /* gray-400 */
+    transition: color 0.2s;
+    display: block;
+}
+
+.social-link:hover {
+    color: white;
+}
+
+.social-icon {
+    width: 1.5rem;
+    /* 6 */
+    height: 1.5rem;
+    /* 6 */
+}
+
+.footer-heading {
+    font-size: 1.125rem;
+    /* lg */
+    font-weight: 600;
+    margin-bottom: 1rem;
+    font-family: var(--font-heading);
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-link {
+    color: #9ca3af;
+    /* gray-400 */
+    transition: color 0.2s;
+    text-decoration: none;
+}
+
+.footer-link:hover {
+    color: white;
+}
+
+.footer-bottom {
+    border-top: 1px solid #374151;
+    /* gray-700 */
+    margin-top: 2rem;
+    padding-top: 2rem;
+    text-align: center;
+    color: #9ca3af;
+    /* gray-400 */
+}
