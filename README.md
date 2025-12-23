@@ -1,173 +1,108 @@
-# 🍔 Brrrgrrr - Full-Stack Burger Ordering Web App
+# 🍔 Brrrgrrr - Frontend-Only Indian Burger App
 
-> A comprehensive MERN stack application for custom burger ordering, featuring a dynamic frontend, robust backend, and a dedicated admin panel.
+> A professional React application for custom burger ordering, refactored to a clean **Frontend-Only** architecture using modern **Vanilla CSS**. It features a culturally adapted Indian menu and a robust "Mock Backend" service for full functionality without a server.
 
 ## 📋 Table of Contents
 
 - [Overview](#overview)
-- [Features](#features)
-  - [Customer Features](#customer-features)
-  - [Admin Features](#admin-features)
+- [Key Features](#features)
 - [Tech Stack](#tech-stack)
-- [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Environment Setup](#environment-setup)
 - [Running the Application](#running-the-application)
 - [Project Structure](#project-structure)
-- [API Documentation](#api-documentation)
-- [Offline Mode](#offline-mode)
+- [Test Credentials](#test-credentials)
 - [License](#license)
 
 ## 🔍 Overview
 
-**Brrrgrrr** is a professional-grade web application designed to simulate a real-world food ordering experience. Users can browse products, build custom burgers with ingredient visualization, place orders, and track their history. The platform also includes an extensive Admin Dashboard for managing products, blog posts, and viewing sales data.
+**Brrrgrrr** attempts to simulate a premium food ordering experience. Users can browse an exclusive **Indian Fusion Menu**, build custom burgers using a visual stack builder, placed orders, and manage their cart—all within a blazing fast React application.
+
+This project has been completely refactored to:
+1.  **Remove Backend Dependencies**: No Node/Express server or MongoDB required.
+2.  **Use Vanilla CSS**: All styling is custom-written semantic CSS (no Tailwind/Bootstrap).
+3.  **Localize Content**: Menu features items like *Maharaja Mac*, *Aloo Tikki*, and *Paneer Wraps* with INR (₹) pricing.
 
 ## 🚀 Features
 
-### Customer Features
-- **🛒 Dynamic Shopping Cart**: Real-time updates for adding/removing items.
-- **🍔 Burger Builder**: Interactively customize burgers by adding ingredients (cheese, lettuce, bacon, etc.) and updating the price dynamically.
-- **🔐 User Authentication**: Secure Login and Registration using JWT.
-- **📦 Order Management**: View past orders and current order status.
-- **🎨 Responsive Design**: Mobile-first UI built with React and Tailwind CSS.
+### Core Functionality
+- **🛒 Dynamic Cart**: Real-time state management for items and totals.
+- **🍔 Interactive Burger Builder**: Visually stack ingredients (Buns, Patties, Veggies) to create custom burgers.
+- **🇮🇳 Indian Context**: Specialized menu with no beef; includes Chicken, Mutton, and Veg options.
+- **🔐 Mock Authentication**: Fully functional Login/Registration flow simulation.
 
-### Admin Features
-- **📊 Dashboard**: Visual overview of platform performance.
-- **🛍️ Product Management**: View and manage available products (in development).
-- **📝 Blog Management**: Create and edit blog posts to engage users.
-- **📂 Data Export**: Export order data to Excel/CSV for analysis.
+### Technical Highlights
+- **🎨 Vanilla CSS Architecture**: Organized, modular CSS with CSS Variables for theming (`colors`, `fonts`, `shadows`).
+- **📦 Mock Data Service**: A specialized `api.js` service that intercepts calls and returns data from `mockData.js`, simulating async backend delays and logic.
+- **📱 Responsive Design**: Custom media queries ensure the app looks great on standard mobile and desktop screens.
 
 ## 🛠 Tech Stack
 
-### Frontend (Client)
 - **Framework**: React 18
-- **Build Tool**: Vite (Rolldown)
-- **Styling**: Tailwind CSS v4, Framer Motion (for animations)
+- **Build Tool**: Vite
+- **Styling**: Vanilla CSS (Variables, Flexbox, Grid)
 - **Icons**: Lucide React
-- **State Management**: React Context API
-- **HTTP Client**: Axios
-
-### Backend (Server)
-- **Runtime**: Node.js
-- **Framework**: Express.js
-- **Database**: MongoDB (with Mongoose ODM)
-- **Authentication**: JSON Web Tokens (JWT) & Bcrypt
-- **Utilities**: Dotenv, Cors
-
-## 📦 Prerequisites
-
-Ensure you have the following installed:
-- **Node.js**: v18 or higher
-- **npm**: v9 or higher
-- **MongoDB**: (Optional for Offline Mode) Local instance or Atlas URI
+- **State Management**: React Context API (`AuthContext`, `CartContext`)
+- **Navigation**: React Router DOM
 
 ## ⚙️ Installation
 
-1. **Clone the repository** (if applicable) or navigate to the project root.
-
-2. **Install Dependencies**:
-   You can install all dependencies for both client and server using the convenience script:
+1. **Clone the repository** (or unzip project).
+2. **Navigate to the root directory**:
    ```bash
-   npm run install-all
+   cd Exposys
    ```
-   
-   *Or install manually:*
+3. **Install Dependencies**:
    ```bash
-   # Root
-   npm install
-
-   # Client
-   cd client
-   npm install
-
-   # Server
-   cd ../server
    npm install
    ```
-
-## 🔐 Environment Setup
-
-Create `.env` files for configuration.
-
-### 1. Root `.env`
-```bash
-cp .env.example .env
-```
-
-### 2. Server `.env`
-Navigate to `server/` and create a `.env` file:
-```env
-PORT=4000
-MONGO_URI=your_mongodb_connection_string
-JWT_SECRET=your_super_secret_key
-CLIENT_URL=http://localhost:5175
-```
-> **Note**: If you don't have a MongoDB instance, the app will default to **Offline Mode** using mock data.
 
 ## ▶️ Running the Application
 
-### Concurrent Mode (Recommended)
-Run both client and server with a single command from the root:
+To start the development server:
 ```bash
 npm run dev
 ```
+Open [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal) to view it in the browser.
 
-### Separate Terminals
-**Terminal 1 (Server):**
+To build for production:
 ```bash
-cd server
-npm run dev
+npm run build
 ```
-**Terminal 2 (Client):**
-```bash
-cd client
-npm run dev
-```
-
-- **Frontend**: [http://localhost:5175](http://localhost:5175)
-- **Backend**: [http://localhost:4000](http://localhost:4000)
 
 ## 📁 Project Structure
 
 ```bash
-brrrgrrr/
-├── client/              # React Frontend application
-│   ├── src/
-│   │   ├── components/  # Reusable UI components
-│   │   ├── pages/       # Route pages (Home, Login, Builder, etc.)
-│   │   ├── contexts/    # Global State (Auth, Cart, etc.)
-│   │   └── ...
-│   └── ...
-├── server/              # Express Backend application
-│   ├── src/
-│   │   ├── controllers/ # Logic for routes
-│   │   ├── models/      # Mongoose schemas
-│   │   ├── routes/      # API endpoints
-│   │   └── ...
-│   └── ...
-├── .env.example         # Template for environment variables
-├── package.json         # Root scripts and dependencies
-└── README.md            # Project documentation
+Exposys/
+├── src/
+│   ├── components/      # Reusable UI (Header, Footer, Hero, Cards)
+│   ├── contexts/        # Global State (Auth, Cart)
+│   ├── pages/           # Page Layouts (Home, Menu, Login, Builder)
+│   ├── services/        # Mock API Service (api.js)
+│   ├── constants/       # Data files (mockData.js, burgerData.js)
+│   ├── App.jsx          # Main Router Setup
+│   └── index.css        # Global CSS Variables & Resets
+├── public/              # Static assets
+├── index.html           # Entry HTML
+├── package.json         # Dependencies & Scripts
+└── vite.config.js       # Vite Configuration
 ```
 
-## 🧪 API Documentation
+## 🔐 Test Credentials
 
-The backend exposes the following main endpoints:
+Since the backend is mocked, you can use these pre-configured accounts to test specific roles:
 
-| Method | Endpoint        | Description           |
-|lang---|----------------|-----------------------|
-| GET   | `/api/products`| Fetch all products    |
-| POST  | `/api/orders`  | Create a new order    |
-| POST  | `/api/auth/login` | User login         |
-| POST  | `/api/auth/register` | User registration |
-| GET   | `/api/posts`   | Fetch blog posts      |
+### 👤 User Account
+*Access to Ordering, Cart, and Builder.*
+- **Email**: `john@example.com`
+- **Password**: `password123`
 
-## 🔌 Offline Mode
+### 🛡️ Admin Account
+*Access to Dashboard and Reports.*
+- **Email**: `admin@brrr.com`
+- **Password**: `adminpassword`
 
-The application is built to be resilient. If a MongoDB connection cannot be established, the server automatically switches to **Offline Mode**.
-- **Data**: Served from in-memory mock files (`mockData.js`).
-- **Functionality**: Most features (browsing, simulated ordering) remain functional for demonstration purposes.
+*(Note: The Login page has "Quick Fill" buttons for these credentials for your convenience.)*
 
 ## 📄 License
 
-This project is licensed under the MIT License.
+This project is open-source and available for educational purposes.
