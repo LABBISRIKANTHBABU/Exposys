@@ -1,108 +1,88 @@
-# 🍔 Brrrgrrr - Frontend-Only Indian Burger App
+# Brrrgrrr - Frontend Project
 
-> A professional React application for custom burger ordering, refactored to a clean **Frontend-Only** architecture using modern **Vanilla CSS**. It features a culturally adapted Indian menu and a robust "Mock Backend" service for full functionality without a server.
+## 🍔 Project Overview
+**Brrrgrrr** is a dynamic online burger ordering platform designed to give users complete control over their meal. It suggests users to not only customize their burgers by adding or removing ingredients but also create their own burger entirely from scratch using ingredients in stock.
 
-## 📋 Table of Contents
+This project is a **Pure Frontend Application** built with **React**, emphasizing modern JavaScript concepts, efficient state management, and interactive UI design.
 
-- [Overview](#overview)
-- [Key Features](#features)
-- [Tech Stack](#tech-stack)
-- [Installation](#installation)
-- [Running the Application](#running-the-application)
-- [Project Structure](#project-structure)
-- [Test Credentials](#test-credentials)
-- [License](#license)
+## 🎯 Lab/Project Objectives
+This project strictly implements the following mandatory technical requirements:
+1.  **Arrays**: Extensive use of arrays for data structures (menus, ingredients, cart items).
+2.  **DOM Manipulation**: Dynamic rendering and updates using React's Virtual DOM.
+3.  **ES6 Compatible**: Full utilization of modern JavaScript features (Modules, Arrow Functions, Destructuring).
+4.  **Higher Order Functions**: Implementation of `map`, `filter`, `reduce` for data processing.
 
-## 🔍 Overview
+## ✨ Key Features
 
-**Brrrgrrr** attempts to simulate a premium food ordering experience. Users can browse an exclusive **Indian Fusion Menu**, build custom burgers using a visual stack builder, placed orders, and manage their cart—all within a blazing fast React application.
+### 1. 🛠️ Build Your Own Burger
+- **Interactive Builder**: Users can select individual ingredients (patties, sauces, veggies) to construct a custom burger.
+- **Dynamic Pricing**: Real-time price calculation based on selected ingredients.
+- **Visual Feedback**: Immediate visual updates as ingredients are added or removed.
 
-This project has been completely refactored to:
-1.  **Remove Backend Dependencies**: No Node/Express server or MongoDB required.
-2.  **Use Vanilla CSS**: All styling is custom-written semantic CSS (no Tailwind/Bootstrap).
-3.  **Localize Content**: Menu features items like *Maharaja Mac*, *Aloo Tikki*, and *Paneer Wraps* with INR (₹) pricing.
+### 2. 📋 Interactive Menu
+- **Categorized View**: Burgers are organized by categories (Chicken, Veggie, Mutton, etc.).
+- **Filtering System**: Users can filter the menu to find exactly what they crave.
+- **Search**: Instant search functionality to construct results dynamically.
 
-## 🚀 Features
+### 3. 🛒 Smart Cart & Checkout
+- **Cart Management**: Add, remove, and adjust quantities of items.
+- **Order Summary**: Detailed breakdown of costs including custom burger configurations.
+- **Seamless Checkout**: A smooth flow from cart to order confirmation.
 
-### Core Functionality
-- **🛒 Dynamic Cart**: Real-time state management for items and totals.
-- **🍔 Interactive Burger Builder**: Visually stack ingredients (Buns, Patties, Veggies) to create custom burgers.
-- **🇮🇳 Indian Context**: Specialized menu with no beef; includes Chicken, Mutton, and Veg options.
-- **🔐 Mock Authentication**: Fully functional Login/Registration flow simulation.
+### 4. 📊 Admin Dashboard
+- **Visual Analytics**: Charts and graphs to visualize mock sales data.
+- **Order Management**: Interface to view and manage customer orders.
 
-### Technical Highlights
-- **🎨 Vanilla CSS Architecture**: Organized, modular CSS with CSS Variables for theming (`colors`, `fonts`, `shadows`).
-- **📦 Mock Data Service**: A specialized `api.js` service that intercepts calls and returns data from `mockData.js`, simulating async backend delays and logic.
-- **📱 Responsive Design**: Custom media queries ensure the app looks great on standard mobile and desktop screens.
+## 💻 Technical Implementation Details
 
-## 🛠 Tech Stack
+### Higher Order Functions (HOFs)
+The application leverages the power of ES6 HOFs for clean and efficient data transformation:
+- **`map()`**: Used extensively to render lists of components, such as `Menu` items, `Cart` entries, and `Notification` toasts.
+- **`filter()`**: Utilized for the **Menu Filtering** system (filtering by category/preference) and removing items from the `Cart` or `Notifications`.
+- **`reduce()`**: Implemented in the `CartContext` to dynamically calculate the **Total Price** of the shopping cart from an array of item objects.
 
-- **Framework**: React 18
-- **Build Tool**: Vite
-- **Styling**: Vanilla CSS (Variables, Flexbox, Grid)
-- **Icons**: Lucide React
-- **State Management**: React Context API (`AuthContext`, `CartContext`)
-- **Navigation**: React Router DOM
+### Arrays & Data Structures
+- **Mock Data Layer**: Complex array structures (`MOCK_PRODUCTS`, `MOCK_INGREDIENTS`, `MOCK_POSTS`) simulate a database.
+- **State Management**: React `useState` hooks manage arrays of cart items and active notifications, allowing for real-time updates without page reloads.
 
-## ⚙️ Installation
+### DOM Manipulation & React
+- **Virtual DOM**: React's reconciliation algorithm ensures only changed parts of the DOM are updated, providing high performance.
+- **Conditional Rendering**: Elements like the "Customization Popup" or "Loading States" appear/disappear dynamically based on state, effectively manipulating the visible DOM.
 
-1. **Clone the repository** (or unzip project).
-2. **Navigate to the root directory**:
-   ```bash
-   cd Exposys
-   ```
-3. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
+### ES6+ Features
+- **Modules**: Component-based architecture with `import`/`export`.
+- **Arrow Functions**: Concise syntax for components and callbacks.
+- **Destructuring**: Extracting props and state values cleanly.
+- **Spread Operator**: Used for immutable state updates (e.g., adding an item to the cart array: `[...prevItems, newItem]`).
 
-## ▶️ Running the Application
+## 📂 Project Structure
 
-To start the development server:
-```bash
-npm run dev
 ```
-Open [http://localhost:5173](http://localhost:5173) (or the port shown in your terminal) to view it in the browser.
-
-To build for production:
-```bash
-npm run build
+e:\Exposys\src
+├── components/          # Reusable UI components (Header, Footer, Card, etc.)
+├── constants/           # Mock data and configuration constants
+├── contexts/            # React Contexts for global state (CartContext)
+├── pages/               # Main page views (Home, Menu, BuildBurger, Cart)
+├── App.jsx              # Main Application Entry Component
+└── main.jsx             # React DOM Root Rendering
 ```
 
-## 📁 Project Structure
+## 🚀 Setup & Installation
 
-```bash
-Exposys/
-├── src/
-│   ├── components/      # Reusable UI (Header, Footer, Hero, Cards)
-│   ├── contexts/        # Global State (Auth, Cart)
-│   ├── pages/           # Page Layouts (Home, Menu, Login, Builder)
-│   ├── services/        # Mock API Service (api.js)
-│   ├── constants/       # Data files (mockData.js, burgerData.js)
-│   ├── App.jsx          # Main Router Setup
-│   └── index.css        # Global CSS Variables & Resets
-├── public/              # Static assets
-├── index.html           # Entry HTML
-├── package.json         # Dependencies & Scripts
-└── vite.config.js       # Vite Configuration
-```
+To run this project locally:
 
-## 🔐 Test Credentials
+1.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
 
-Since the backend is mocked, you can use these pre-configured accounts to test specific roles:
+2.  **Start Development Server**:
+    ```bash
+    npm run dev
+    ```
 
-### 👤 User Account
-*Access to Ordering, Cart, and Builder.*
-- **Email**: `john@example.com`
-- **Password**: `password123`
+3.  **Open in Browser**:
+    Navigate to `http://localhost:5173` (or the URL provided by Vite).
 
-### 🛡️ Admin Account
-*Access to Dashboard and Reports.*
-- **Email**: `admin@brrr.com`
-- **Password**: `adminpassword`
-
-*(Note: The Login page has "Quick Fill" buttons for these credentials for your convenience.)*
-
-## 📄 License
-
-This project is open-source and available for educational purposes.
+---
+*Developed as a Frontend Lab Project demonstrating proficiency in React and Modern JavaScript.*
