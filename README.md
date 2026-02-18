@@ -82,7 +82,9 @@ To run this project locally:
     ```
 
 3.  **Open in Browser**:
-    Navigate to `http://localhost:5173` (or the URL provided by Vite).
+    Navigate to `https://exposys-seven.vercel.app/` (or the URL provided by Vite).
+
+    
 
 ---
 *Developed as a Frontend Lab Project demonstrating proficiency in React and Modern JavaScript.*
